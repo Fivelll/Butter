@@ -10,6 +10,10 @@ import java.lang.annotation.Target;
  * Created by lzl on 2019/10/20.
  */
 
+/**
+ * 这里运行时注解使用RetentionPolicy.RUNTIME
+ * 编译时注解使用RetentionPolicy.SOURCE
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface Click {

@@ -7,10 +7,7 @@ import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeSpec;
 
 import java.io.IOException;
-import java.io.Writer;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -30,7 +27,6 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.Elements;
 import javax.lang.model.util.Types;
 import javax.tools.Diagnostic;
-import javax.tools.JavaFileObject;
 
 @AutoService(Processor.class)
 public class ButterKnifeLzlProcessor extends AbstractProcessor{
@@ -69,7 +65,7 @@ public class ButterKnifeLzlProcessor extends AbstractProcessor{
 
     @Override
     public boolean process(Set<? extends TypeElement> set, RoundEnvironment roundEnvironment) {
-        mMessager.printMessage(Diagnostic.Kind.MANDATORY_WARNING, set.size() + "");
+        // 文件 指向 文件中包含的元素的映射
         Map<TypeElement, List<Element>> classToAnnotation = new HashMap();
         for (TypeElement annotationElement : set){
             Set<? extends Element> annotationSet = roundEnvironment.getElementsAnnotatedWith(annotationElement);
@@ -90,18 +86,6 @@ public class ButterKnifeLzlProcessor extends AbstractProcessor{
         }
 
         generateJavaFile(classToAnnotation);
-
-
-//        try {
-//            JavaFileObject jfo = mFilter.createSourceFile("com.example.lzl.butterknifelzl.MainActivity" + ".ViewBinding", new Element[]{});
-//            Writer writer = jfo.openWriter();
-//            writer.write("package" + " com.example.lzl.butterknifelzl;");
-//            writer.close();
-//            writer.flush();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
         return false;
     }
 
@@ -131,10 +115,8 @@ public class ButterKnifeLzlProcessor extends AbstractProcessor{
                             .addAnnotation(Override.class)
                             .addModifiers(Modifier.PUBLIC)
                             .returns(void.class)
-                           // .addParameter(ClassName.get("android.view", "View"), "v")
+                            //.addParameter(ClassName.get("android.view", "View"), "v") // 与下一行代码效果一致
                             .addParameter(ClassName.bestGuess("android.view.View"), "v")
-                           // .addParameter(ClassName.bestGuess("android.view.View"), "v")
-                            //.addParameter(java.lang.String.class, "s")
                             .addStatement("target.$L()", element.getSimpleName().toString())
                             .build();
                     TypeSpec innerTypeSpec = TypeSpec.anonymousClassBuilder("")

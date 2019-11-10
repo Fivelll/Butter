@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ButterKnifelzl.iml" filepath="$PROJECT_DIR$/ButterKnifelzl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Butter.iml" filepath="$PROJECT_DIR$/Butter.iml" />
+      <module fileurl="file://C:\Users\lzl\Desktop\新建文件夹\Butter\ButterKnifelzl.iml" filepath="C:\Users\lzl\Desktop\新建文件夹\Butter\ButterKnifelzl.iml" />
       <module fileurl="file://$PROJECT_DIR$/annotation/annotation.iml" filepath="$PROJECT_DIR$/annotation/annotation.iml" />
+      <module fileurl="file://C:\Users\lzl\Desktop\新建文件夹\Butter\annotation\annotation.iml" filepath="C:\Users\lzl\Desktop\新建文件夹\Butter\annotation\annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\lzl\Desktop\新建文件夹\Butter\app\app.iml" filepath="C:\Users\lzl\Desktop\新建文件夹\Butter\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/butter/butter.iml" filepath="$PROJECT_DIR$/butter/butter.iml" />
+      <module fileurl="file://C:\Users\lzl\Desktop\新建文件夹\Butter\butter\butter.iml" filepath="C:\Users\lzl\Desktop\新建文件夹\Butter\butter\butter.iml" />
       <module fileurl="file://$PROJECT_DIR$/compiler/compiler.iml" filepath="$PROJECT_DIR$/compiler/compiler.iml" />
+      <module fileurl="file://C:\Users\lzl\Desktop\新建文件夹\Butter\compiler\compiler.iml" filepath="C:\Users\lzl\Desktop\新建文件夹\Butter\compiler\compiler.iml" />
     </modules>
   </component>
 </project>
